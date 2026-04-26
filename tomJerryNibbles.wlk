@@ -1,6 +1,6 @@
 object tom {
     var energia = 50
-
+    method energia() = energia
 
     method comer(raton){
         energia += 12 + raton.peso()
@@ -12,6 +12,17 @@ object tom {
 
     method velocidad(){
         return 5 + energia/10
+    }
+
+    method puedeCazar(metros){
+        return energia > metros/2
+    }
+
+    method cazar(raton,distancia){
+        if(self.puedeCazar(distancia)){
+            self.corre(distancia)
+            self.comer(raton)
+        }
     }
 }
 
@@ -35,4 +46,19 @@ object nibbles {
     }
 }
 
-// Inventar otro ratón
+object pepe{
+    var lleno = false
+
+    method como(){
+        lleno = true
+    }
+
+    method peso(){
+        var peso = 10
+
+        if(lleno){
+            peso = 15
+        }
+        return peso
+    }
+}

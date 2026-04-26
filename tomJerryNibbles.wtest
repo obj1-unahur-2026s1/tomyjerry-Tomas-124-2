@@ -1,17 +1,23 @@
 import tomJerryNibbles.*
 
 describe "Grupo de test" {
-
+method initialize(){
+  tom.corre(10)
+  tom.comer(jerry)
+}
   test "test 1" {
-    assert.equals(100, 50+50)
+    assert.equals(14.7,tom.velocidad())
+  }
+
+  test "test 2"{
+    pepe.como()
+    tom.cazar(pepe,14)
+    assert.equals(117, tom.energia())
   }
 
   test "test 3" {
-    assert.that(true)
+    assert.that(tom.puedeCazar(15))
   }
 
-  test "test 4" {
-    assert.notThat(false)
-  }
 
 }
